@@ -9,7 +9,7 @@
 const SIZE = 600;
 
 // How many squares a composition stacks, inclusive.
-const MIN_SQUARES = 2;
+const MIN_SQUARES = 3;
 const MAX_SQUARES = 5;
 
 // The palette is built in OKLab, where a step in lightness is roughly a step in

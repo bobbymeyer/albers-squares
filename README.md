@@ -39,5 +39,4 @@ canvas. A composition can still come out dark, pale or near-grey; it just
 cannot come out with fewer squares than it has.
 
 `MIN_SQUARES` and `MAX_SQUARES` set how many squares a composition stacks —
-2 to 5, picked evenly, so a two-square composition is by design, not a
-collapsed four.
+3 to 5, picked evenly.
