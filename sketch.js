@@ -16,7 +16,6 @@ function setup() {
   const cnv = createCanvas(SIZE, SIZE);
   cnv.parent('albers-container');
   colorMode(RGB);
-  frameRate(0.3); // a new composition roughly every three seconds
   noStroke();
   grain = makeGrain();
 }
@@ -38,6 +37,9 @@ function makeGrain() {
 }
 
 function draw() {
+  // Set the rate inside draw, not setup, so the first composition appears at
+  // once and only the cadence after it is slow — a new one every ~3s.
+  frameRate(0.3);
   clear();
   blendMode(BLEND);
   squares = random(1, 5);
