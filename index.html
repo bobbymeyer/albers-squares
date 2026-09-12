@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Albers' Squares</title>
+    <meta name="description" content="Generating designs in the style of Josef Albers' Homage to the Square, in p5.js." />
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.3/lib/p5.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 2rem 1rem;
+        font-family: system-ui, sans-serif;
+        color: #000;
+        background: #fff;
+      }
+      .intro {
+        max-width: 600px;
+        margin: 0 auto 1rem;
+      }
+      #albers-container {
+        width: 100%;
+        max-width: 600px;
+        aspect-ratio: 1 / 1;
+        margin: 0 auto;
+      }
+      #albers-container canvas {
+        width: 100% !important;
+        height: 100% !important;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="intro">A new composition every few seconds, after Josef Albers' Homage to the Square.</p>
+    <div id="albers-container"></div>
+    <script src="sketch.js"></script>
+  </body>
+</html>
