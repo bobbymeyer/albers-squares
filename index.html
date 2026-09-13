@@ -34,5 +34,10 @@
     <p class="intro">A new composition every few seconds, after Josef Albers' Homage to the Square.</p>
     <div id="albers-container"></div>
     <script src="sketch.js"></script>
+    <script>
+      // sketch.js only defines the sketch; the page starts it, so the same file
+      // can be loaded by the bobbymeyer.com post and started on its own terms.
+      new p5(window.albersSketch, document.getElementById('albers-container'));
+    </script>
   </body>
 </html>

@@ -19,11 +19,29 @@ p5 loads from a CDN; everything else is in `sketch.js`.
 
 ## What's here
 
-- `index.html` — the page: loads p5 and the sketch.
+- `index.html` — the page: loads p5 and the sketch, and starts it.
 - `sketch.js` — the sketch. `setColors` builds the palette, `createSquares`
   stacks the nested squares, and a generated grain is soft-light blended on top.
   The original overlaid a `canvas.jpg` texture that was lost; the grain stands
   in for it.
+
+## One copy of the sketch
+
+`sketch.js` does not start itself. It puts an instance-mode factory on
+`window.albersSketch` and stops there, so the page that loads it decides when to
+run it and keeps the handle to stop it again:
+
+```js
+const instance = new p5(window.albersSketch, document.getElementById('albers-container'));
+```
+
+That is what `index.html` does here, and it is what the Albers post on
+bobbymeyer.com does too — it loads this same file from this deploy rather than
+keeping a copy of its own, and tears its instance down when the site's client
+router navigates away. The post used to carry a second copy, and the two drifted
+the first time the palette changed. Anything that would break that call —
+renaming the global, starting the sketch from this file, needing a p5 the post
+does not load — breaks the post, so it is worth a thought before changing.
 
 ## About the palette
 
